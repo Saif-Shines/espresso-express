@@ -6,7 +6,7 @@ import MenuPage from "./components/MenuPage.js";
 import { DetailsPage } from "./components/DetailsPage.js";
 import { OrderPage } from "./components/OrderPage.js";
 
-window.app = Object.create({});
+window.app = {};
 app.store = Store;
 app.router = Router;
 
