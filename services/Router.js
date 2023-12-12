@@ -22,13 +22,17 @@ const Router = {
     let pageElement = null;
     switch (route) {
       case "/":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Home";
+        pageElement = document.createElement("menu-page");
         break;
       case "/order":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Order";
+        pageElement = document.createElement("order-page");
         break;
+      default:
+        if (route.startsWith("/product-")) {
+          pageElement = document.createElement("details-page");
+          const paramId = route.substring(route.lastIndexOf("-") + 1);
+          pageElement.dataset.id = paramId;
+        }
     }
     if (pageElement) {
       // document.querySelector("main").children[0].remove();
